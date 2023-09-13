@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Me Therapy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(255, 154, 154);
+            color: rgb(106, 40, 4);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            background-color: rgb(255, 255, 76);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: rgb(139, 51, 3);
+            margin: 0 23px;
+        }
+
+        nav ul li a:hover {
+            color: rgb(205, 6, 6);
+            font-size: 1.05em;
+        }
+
+        .left {
+            font-size: 2rem;
+        }
+
+        .firstSection {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .firstSection>div {
+            width: 30%;
+        }
+
+        .leftSection {
+            font-size: 1rem;
+            margin: 70px;
+        }
+
+        .rightSection img {
+            width: 80%;
+        }
+
+        .purple {
+            color: rgba(238, 22, 108, 0.7);
+            font-size: 1.5rem;
+        }
+
+        #element {
+            color: rgba(238, 22, 108, 0.7);
+            font-size: 1.5rem;
+        }
+
+        .secondSection {
+            max-width: 80vw;
+            margin: auto;
+        }
+
+        .second-navbar {
+            background-color: rgb(247, 247, 120);
+            text-align: center;
+        }
+
+        .second-navbar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .second-navbar li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        .second-navbar a {
+            text-decoration: none;
+            color: rgb(139, 51, 3);
+            font-weight: bold;
+        }
+
+        .second-navbar a:hover {
+            color: rgb(205, 6, 6);
+        }
+
+        /* Styling for the availability section */
+        .Availability {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .Availability h2 {
+            text-align: center;
+        }
+
+        .Availability .calendar {
+            text-align: center;
+        }
+
+        .Availability .month {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .Availability #prevMonth,
+        .Availability #nextMonth {
+            cursor: pointer;
+        }
+
+        .Availability #availabilityTable {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .Availability #availabilityTable th,
+        .Availability #availabilityTable td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        .Availability #availabilityTable td.available {
+            background-color: #5CB85C;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .Availability #availabilityTable td.booked {
+            background-color: #D9534F;
+            color: #fff;
+        }
+
+        .Availability #availabilityTable td.selected {
+            background-color: #f0ad4e;
+            color: #fff;
+        }
+        .booking-form {
+            display: none;
+            background-color: #f87a7a;
+            border: 1px solid #f30b0b;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px;
+            max-width: 400px;
+        }
+
+        .booking-form h2 {
+            text-align: center;
+        }
+
+        .booking-form p {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .booking-form .form-group {
+            margin-bottom: 15px;
+        }
+
+        .booking-form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .booking-form input[type="text"],
+        .booking-form input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .booking-form button[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Get Me Therapy ~ Book a Life</div>
+            <div class="right">
+                <ul>
+                    <li><a href="/">About Us</a></li>
+                    <li><a href="/">Pricing</a></li>
+                    <li><a href="/">FAQs</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="firstSection">
+            <div class="leftSection">
+                <span class="purple">Get Me Therapy</span>
+                <div>Our Proven Approach Has Transformed Thousands:</div>
+                <div>Relationships, Careers, Mental Health, Dealing with Depression, Anxiety, Insomnia, Stress,
+                    Anger, and More...</div>
+                <div>Join Us on Your Journey to a Brighter Tomorrow."</div>
+                <span id="element"></span>
+            </div>
+            <div class="rightSection">
+                <img src="IMG-20220324-WA0002.jpg" alt style=" margin: 0px 0; ">
+            </div>
+        </section>
+
+        <section class="secondSection">
+            <h2>Our Services</h2>
+            <p>We offer a range of services to help you on your journey to better mental health:</p>
+
+            <ul>
+                <li>Individual Therapy</li>
+                <li>Couples Counseling</li>
+                <li>Group Therapy Sessions</li>
+                <li>Online Counseling</li>
+                <li>Mindfulness and Meditation Classes</li>
+                <li>Stress Management Workshops</li>
+            </ul>
+
+            <h2>Why Choose Us?</h2>
+            <p>At Get Me Therapy, we are dedicated to providing you with the best care and support for your mental well-being. Here's why you should choose us:</p>
+
+            <ul>
+                <li>Experienced and Caring Therapists</li>
+                <li>Flexible Scheduling</li>
+                <li>Confidential and Safe Environment</li>
+                <li>Customized Treatment Plans</li>
+                <li>Proven Track Record of Success</li>
+                <li>Convenient Online Booking</li>
+            </ul>
+
+            <h2>Contact Us</h2>
+            <p>If you're ready to take the first step towards a brighter tomorrow, don't hesitate to get in touch with us. We're here to support you.</p>
+
+            <p>Phone: (123) 456-7890</p>
+            <p>Email: info@getmetherapy.com</p>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Understanding You.', 'Always Here.', 'Making Life Better.'],
+            typeSpeed: 50,
+        });
+    </script>
+
+    <nav class="second-navbar">
+        <ul>
+            <li><a href="#Availability">Check Availability</a></li>
+        </ul>
+    </nav>
+
+    <!-- Check Availability Section -->
+    <section id="Availability" class="Availability">
+        <h2>Check Availability</h2>
+        <div class="calendar">
+            <div class="month">
+                <span id="prevMonth">&#8249;</span>
+                <h3 id="currentMonth"></h3>
+                <span id="nextMonth">&#8250;</span>
+            </div>
+            <table id="availabilityTable">
+                <!-- Calendar days will be generated here using JavaScript -->
+            </table>
+        </div>
+    </section>
+    <div id="bookingForm" class="booking-form">
+      <h2>Book an Appointment</h2>
+      <p>Select a date: <span id="selectedDate"></span></p>
+      <form id="appointmentForm">
+          <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" autocomplete="name" required>
+          </div>
+          <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email"  autocomplete="email" required>
+          </div>
+          <button type="submit">Submit</button>
+      </form>
+  </div>
+    <!-- JavaScript script tag for the calendar (You can include your calendar logic here) -->
+    <script>
+      const selectedDateElement = document.getElementById("selectedDate");
+        document.addEventListener("DOMContentLoaded", function () {
+            const availabilityTable = document.getElementById("availabilityTable");
+            const currentMonthElement = document.getElementById("currentMonth");
+            const prevMonthElement = document.getElementById("prevMonth");
+            const nextMonthElement = document.getElementById("nextMonth");
+
+            let currentDate = new Date();
+            let currentMonth = currentDate.getMonth();
+            let currentYear = currentDate.getFullYear();
+
+            // Event listener for previous month button
+            prevMonthElement.addEventListener("click", function () {
+                currentMonth--;
+                if (currentMonth < 0) {
+                    currentMonth = 11;
+                    currentYear--;
+                }
+                updateCalendar();
+            });
+
+            // Event listener for next month button
+            nextMonthElement.addEventListener("click", function () {
+                currentMonth++;
+                if (currentMonth > 11) {
+                    currentMonth = 0;
+                    currentYear++;
+                }
+                updateCalendar();
+            });
+
+            // Function to update the calendar based on the current month and year
+            function updateCalendar() {
+                currentDate = new Date(currentYear, currentMonth, 1);
+                currentMonthElement.textContent = currentDate.toLocaleString('default', { month: 'long' }) + " " + currentYear;
+
+                // Clear the table
+                availabilityTable.innerHTML = '';
+
+                // Create table headers for days of the week
+                const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+                const headerRow = availabilityTable.insertRow();
+                for (const day of daysOfWeek) {
+                    const th = document.createElement("th");
+                    th.textContent = day;
+                    headerRow.appendChild(th);
+                }
+
+                // Get the first day of the month and the number of days in the month
+                const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
+                const lastDayOfMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+                let date = 1;
+
+                // Create calendar cells
+                for (let i = 0; i < 6; i++) {
+                    const row = availabilityTable.insertRow();
+
+                    for (let j = 0; j < 7; j++) {
+                        const cell = row.insertCell();
+                        if (i === 0 && j < firstDayOfMonth) {
+                            // Empty cells before the first day of the month
+                            continue;
+                        } else if (date > lastDayOfMonth) {
+                            // Empty cells after the last day of the month
+                            continue;
+                        }
+
+                        cell.textContent = date;
+                        cell.classList.add("available"); // You can customize this class as needed
+                        cell.addEventListener("click", handleDateClick);
+                        date++;
+                    }
+                }
+            }
+
+            // Function to handle date click event
+            function handleDateClick(event) {
+                const selectedCell = event.target;
+                if (selectedCell.classList.contains("available")) {
+                    // Remove "selected" class from all cells
+                    const allCells = availabilityTable.getElementsByTagName("td");
+                    for (const cell of allCells) {
+                        cell.classList.remove("selected");
+                    }
+
+                    // Add "selected" class to the clicked cell
+                    selectedCell.classList.add("selected");
+
+                    // Handle the selected date (e.g., display it or store it for booking)
+                    const selectedDate = new Date(currentYear, currentMonth, selectedCell.textContent);
+                    console.log("Selected Date:", selectedDate);
+                    showBookingForm(selectedDate); 
+            }
+
+                }
+            
+
+            // Initialize the calendar
+            updateCalendar();
+        });
+        function showBookingForm(selectedDate) {
+            const selectedDateElement = document.getElementById("selectedDate");
+            selectedDateElement.textContent = selectedDate.toDateString();
+            const bookingForm = document.getElementById("bookingForm");
+            bookingForm.style.display = "block";
+        }
+
+        // Event listener for form submission
+        const appointmentForm = document.getElementById("appointmentForm");
+        appointmentForm.addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get user inputs
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+
+            // You can add your booking logic here, such as sending the booking details to a server
+            // For this example, we'll display a confirmation message
+            displayBookingConfirmation(name, selectedDateElement.textContent);
+
+            // Clear the form
+            appointmentForm.reset();
+
+            // Hide the booking form
+            const bookingForm = document.getElementById("bookingForm");
+            bookingForm.style.display = "none";
+        });
+
+        // Function to display a booking confirmation message
+        function displayBookingConfirmation(name, selectedDate) {
+            alert(`Thank you, ${name}! Your appointment for ${selectedDate} has been booked.`);
+        }
+
+    </script>
+</body>
+
+</html>
